@@ -6,7 +6,8 @@ This script reads IPs from arguments / Clipboard and does packetmail lookup for 
 
 ```
 $perl packetmail.pl help
-
+@author Uma Mahesh Padisetty
+@intel lookup on packetmail.net
 Usage:
 This script reads IPs from arguments / Clipboard and does packetmail lookup for intel
 

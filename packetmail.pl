@@ -40,6 +40,8 @@ our $_AA_0, $_AA_1, $_AA_2, $_AA3;
 1;
 sub usage{
 	print "
+\@author Uma Mahesh Padisetty
+\@intel lookup on packetmail.net
 Usage:
 This script reads IPs from arguments / Clipboard and does packetmail lookup for intel
 
