@@ -1,5 +1,7 @@
-#@author Uma Mahesh Padisetty uma.padisetty@adp.com
+#@author Uma Mahesh Padisetty uma.padisetty@hotmail.com
 #This script reads IPs from arguments / Clipboard and does packetmail lookup for intel
+#I know this is bad code for parsing json structures, but anyway serve the purpose
+#Hail Nathan Flower for Maintaining the intel about all IPs on packetmail.net
 
 package AutoAnalyst;
 
