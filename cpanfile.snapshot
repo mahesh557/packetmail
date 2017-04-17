@@ -1,0 +1,56 @@
+# carton snapshot format: version 1.0
+DISTRIBUTIONS
+  Clipboard-0.13
+    pathname: K/KI/KING/Clipboard-0.13.tar.gz
+    provides:
+      Clipboard 0.13
+      Clipboard::MacPasteboard undef
+      Clipboard::Win32 undef
+      Clipboard::Xclip undef
+      PhonyClipboard undef
+    requirements:
+      ExtUtils::MakeMaker 7.1
+      Mac::Pasteboard 0
+  Mac-Pasteboard-0.009
+    pathname: W/WY/WYANT/Mac-Pasteboard-0.009.tar.gz
+    provides:
+      Mac::Pasteboard 0.009
+    requirements:
+      Carp 0
+      Encode 0
+      ExtUtils::CBuilder 0
+      Scalar::Util 1.01
+      Test::More 0.96
+      perl 5.006002
+      strict 0
+      warnings 0
+  Text-Autoformat-1.74
+    pathname: N/NE/NEILB/Text-Autoformat-1.74.tar.gz
+    provides:
+      Text::Autoformat 1.74
+      Text::Autoformat::Hang 1.74
+      Text::Autoformat::NullHang 1.74
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Text::Reform 0
+      Text::Tabs 0
+      overload 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Text-Reform-1.20
+    pathname: C/CH/CHORNY/Text-Reform-1.20.tar.gz
+    provides:
+      Text::Reform 1.20
+    requirements:
+      Exporter 0
+      Test::More 0
+      perl 5.005
+  Text-TabularDisplay-1.38
+    pathname: D/DA/DARREN/Text-TabularDisplay-1.38.tar.gz
+    provides:
+      Text::TabularDisplay 1.38
+    requirements:
+      ExtUtils::MakeMaker 0

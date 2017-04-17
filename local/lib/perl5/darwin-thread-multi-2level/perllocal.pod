@@ -1,0 +1,66 @@
+=head2 Mon Apr 17 16:45:58 2017: C<Module> L<Text::TabularDisplay|Text::TabularDisplay>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/padisetu/Applications/AutoAnalyst3/_scripts/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.38>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Apr 17 16:46:05 2017: C<Module> L<Clipboard|Clipboard>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/padisetu/Applications/AutoAnalyst3/_scripts/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.13>
+
+=item *
+
+C<EXE_FILES: scripts/clipjoin scripts/clipedit scripts/clipbrowse scripts/clipaccumulate scripts/clipfilter>
+
+=back
+
+=head2 Mon Apr 17 17:31:45 2017: C<Module> L<Text::Autoformat|Text::Autoformat>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/padisetu/Applications/AutoAnalyst3/_scripts/packetmail/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.74>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
