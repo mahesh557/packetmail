@@ -1,7 +1,7 @@
 #@author Uma Mahesh Padisetty uma.padisetty@hotmail.com
 #This script reads IPs from arguments / Clipboard and does packetmail lookup for intel
 #I know this is bad code for parsing json structures, but anyway serve the purpose
-#Hail Nathan Flower for Maintaining the intel about all IPs on packetmail.net
+#Hail Nathan Fowler for Maintaining the intel about all IPs on packetmail.net
 
 package AutoAnalyst;
 
@@ -21,13 +21,31 @@ $PROXY_TEST = 'fail'; #Set 'pass' if Proxy is configured
 $USERAGENT = 'AutoAnalyst v3.1';
 $DEBUG = 0;
 $VERY_VERBOSE = 0;
-$_PACKETMAIL_KEY = '';					# Contact Nathan Flower for Key for packetmail.net
+$_PACKETMAIL_KEY = '';					# Contact Nathan for Key for packetmail.net
 $packetmail_url = "https://www.packetmail.net/iprep.php/_@@?apikey=$_PACKETMAIL_KEY"; 	# _@@ is replaced with parameter
 
-
+$disclaimer = 'By using this system in any capacity or capability, you release all claims of
+damages and shall not hold or perceive any liability against the publisher for:
+damage, unexpected events or results, decision, or reputation damage, even those
+resulting from wilful or intentional neglect.  No claims made against this data
+shall be honored; no assertions have been made about the quality, accuracy,
+usability, actionability, reputation, merit, or hostility of the returned
+findings.  Use the returned results at your own risk.  In no event will the
+publisher be liable for any damages whatsoever arising out of or related to this
+output, any website or service or output operated by a third party or any
+information contained in this output or any other medium, including, but not
+limited to, direct, indirect, incidental, special, consequential or punitive
+damages, including, but not limited to, lost data, lost revenue, or lost
+profits, under any theory, whether under a contract, tort (including negligence)
+or any other theory of liability, even if the publisher is aware of the
+possibility of such damages.  By using this service, you agree to pursue no
+legal action in any form for any reason.  You may not use this data to source
+information about a competing party for leverage or competitive advantage.
+';
 
 our $_AA_0, $_AA_1, $_AA_2, $_AA3;
 
+print $disclaimer;
 ($ARGV[0] =~ /help|-h/i)?usage():packetmail(join(',',@ARGV));
 
 
