@@ -1,6 +1,6 @@
 # packetmail
 This script reads IPs from arguments / Clipboard and does packetmail lookup for intel
-* Contact Nathan Flower to get Packetmail API Key
+* Contact Nathan to get Packetmail API Key
 * Configure PROXY details in code if script is called behind proxy
 * Set PROXY_TEST = 'pass' if you intend to use the script behind proxy
 
