@@ -49,12 +49,6 @@ print $disclaimer;
 ($ARGV[0] =~ /help|-h/i)?usage():packetmail(join(',',@ARGV));
 
 
-# It     Returns  quick info on IP reputation from packetmail.com if found else "NOT FOUND"
-# $_AA_0 contains detailed info (if required by callee)
-# $_AA_1 contains create date
-# $_AA_2 contains Lists that tracked the IP
-# $_AA_3 contains context that tracked the IP
-
 1;
 sub usage{
 	print "
@@ -69,6 +63,13 @@ This script reads IPs from arguments / Clipboard and does packetmail lookup for 
 ";
 }
 
+
+# It     Returns  quick info on IP reputation from packetmail.com if found else "NOT FOUND"
+# $_AA_0 contains detailed info (if required by callee)
+# $_AA_1 contains create date
+# $_AA_2 contains Lists that tracked the IP
+# $_AA_3 contains context that tracked the IP
+
 sub getPacketmailRep{
 	my $value = shift;
 	our %packetmail_qrep, %packetmail_rep, %packetmail_cdate;
@@ -79,15 +80,15 @@ sub getPacketmailRep{
 	return error("Invalid IP") if not is_ipv4($value);
 
 # 	debug("DB: @_pmdb");
-# 	if ( igrep($value,@_pmdb) ){
-# 		debug("Found This IP Already $value");
-# 		$_AA_0 = $packetmail_rep{ $value };
-# 		$_AA_1 = $packetmail_cdate{ $value };
-# 		$_AA_2 = $packetmail_lists{ $value };
-# 		$_AA_3 = $packetmail_context{ $value };
-# 
-# 		return $packetmail_qrep{ $value };
-# 	} 
+	if ( igrep($value,@_pmdb) ){
+		debug("Found This IP Already $value");
+		$_AA_0 = $packetmail_rep{ $value };
+		$_AA_1 = $packetmail_cdate{ $value };
+		$_AA_2 = $packetmail_lists{ $value };
+		$_AA_3 = $packetmail_context{ $value };
+
+		return $packetmail_qrep{ $value };
+	} 
 	debug("Checking packetmail reputation for $value");
 
 	my $data = $pm_db{$value};
@@ -159,7 +160,7 @@ sub getPacketmailRep{
 
 	$_AA_0 = trim($detail_info);
 	$_AA_1 = $packetmail_createdate;
-	$_AA_2 = $packetmail_list{ $value };
+	$_AA_2 = $packetmail_lists{ $value };
 	$_AA_3 = $packetmail_context{ $value };
 
 	$packetmail_qrep{ $value } = $quick_info;
@@ -303,4 +304,21 @@ sub squeezeStr{
 	$out =~ s/\n\s*/\n/g;
 	$out .= "\n";
 	return trim($out);
+}
+
+# It returns true if given value matches any value in the array
+# It matches both $val =~ /array elements/i and $array_element =~ /$val/i
+# It return 0 if given string is empty
+sub igrep{
+	my ($str, @list) = @_;
+	debug("Checking $str in @list");
+	$str =~ s/\\//g;
+	return 0 if is_empty($str);
+	my $t;
+	foreach $t (@list){
+		chomp $t;
+		#if ( $t =~ /\Q$str\E/i ){	return 1;	}
+		if ( $str =~ /\Q$t\E/i ){	return 1;	}
+	}
+	return 0;
 }
